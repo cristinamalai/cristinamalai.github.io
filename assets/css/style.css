@@ -494,13 +494,21 @@ body {
   animation: move 2s ease-in-out infinite alternate;
 }
 
-.hero .shape-2 {
+
+/*.hero-shape.shape-2 {
   position: absolute;
-  width: 300px;
+  width: 200px;
   height: auto;
   bottom: 390px;
   right: 0px;
+}*/
+
+.hero-shape.shape-2 {
+  position: absolute;
+  animation: move 2s ease-in-out infinite alternate;
 }
+
+
 
 @keyframes move {
   0% {
@@ -629,6 +637,7 @@ body {
 
 .feature .title-wrapper {
   margin-block-end: 30px;
+  margin-left: 0px;
 }
 
 .feature .section-text {
@@ -894,8 +903,11 @@ body {
 }
 
 .footer-top {
-  display: grid;
-  gap: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 100px;
+
 }
 
 .footer .logo {
@@ -905,12 +917,13 @@ body {
 }
 
 .footer-text {
-  margin-block: 10px 30px;
+  text-align: center;
 }
 
 .social-list {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  padding-bottom: 10px;
 }
 
 .social-link {
@@ -946,6 +959,19 @@ body {
 
 .copyright-link {
   display: inline-block;
+}
+
+.footer-brand img {
+  width: 200px;
+  /* Lățime fixă */
+  height: 200px;
+  /* Înălțime fixă */
+  object-fit: contain;
+  /* Asigură că imaginea nu este distorsionată */
+  display: block;
+  /* Elimină eventualele spații extra */
+  margin: 0 auto 10px;
+  /* Centrează și adaugă spațiu jos */
 }
 
 
@@ -1550,33 +1576,30 @@ body {
 
 }
 
-/* Ajustare doar pentru ecrane mai mici (ex: telefoane) */
-@media (max-width: 768px) {
-  .hero .shape-2 {
-    width: 200px;
-    /* Face sigla mai mică pe mobil */
+@media (min-width: 1024px) {
+  .hero-shape.shape-2 {
+    width: 400px;
     height: auto;
     top: 80px;
-    /* O mută mai sus */
-    left: 26%;
-    /* O aduce în centru */
-    transform: translate(-40%, 0);
-    /* Centrează perfect pe axa X */
-    bottom: auto;
-    /* Elimină poziționarea de jos */
-    right: auto;
-    /* Elimină alinierea la dreapta */
+    /* Poziționează sub bara de sus */
+    right: calc(33% - 500px);
+    /* Mută sigla mai în dreapta cu 150px */
+    transform: translateX(50%);
+    /* Ajustare fină */
   }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
-  .hero .shape-2 {
-    width: 200px;
-    /* Dimensiune normală ca pe desktop */
-    height: auto;
-    position: absolute;
-    bottom: 280px;
-    /* Păstrează poziția de desktop */
-    right: 0px;
+/* Mobil: Logo perfect centrat sub bara de sus */
+@media (max-width: 768px) {
+  .hero-shape.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 80px;
+    /* Poziționează sub titlu */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centrează exact */
+    bottom: auto;
+    right: auto;
   }
 }
