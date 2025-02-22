@@ -1596,7 +1596,7 @@ body {
     height: 150px;
     top: 80px;
     /* Poziționează sub titlu */
-    left: 50%;
+    left: 33%;
     transform: translateX(-50%);
     /* Centrează exact */
     bottom: auto;
