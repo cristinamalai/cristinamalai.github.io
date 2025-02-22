@@ -494,14 +494,12 @@ body {
   animation: move 2s ease-in-out infinite alternate;
 }
 
-.hero .shape-1 {
-  top: 100px;
-  left: 30px;
-}
-
 .hero .shape-2 {
-  bottom: 330px;
-  right: 30px;
+  position: absolute;
+  width: 300px;
+  height: auto;
+  bottom: 390px;
+  right: 0px;
 }
 
 @keyframes move {
@@ -1102,10 +1100,6 @@ body {
     justify-content: flex-start;
   }
 
-  .hero .shape-1 {
-    left: 5px;
-  }
-
   .hero-content {
     background-color: transparent;
     text-align: left;
@@ -1150,98 +1144,96 @@ body {
   .grid-list {
     grid-template-columns: 1fr 1fr;
   }
+}
 
 
-
-  /**
+/**
    * HERO
    */
 
-  .hero-title .span {
-    --fs-2: 7rem;
-  }
+.hero-title .span {
+  --fs-2: 7rem;
+}
 
-  .hero-text {
-    font-size: var(--fs-7);
-    max-width: 40ch;
-    margin-block-end: 40px;
-  }
+.hero-text {
+  font-size: var(--fs-7);
+  max-width: 40ch;
+  margin-block-end: 40px;
+}
 
-  .btn-outline {
-    font-size: var(--fs-7);
-    padding: 12px 30px;
-  }
+.btn-outline {
+  font-size: var(--fs-7);
+  padding: 12px 30px;
+}
 
-
-
-  /**
+/**
    * FEATURES
    */
 
-  .feature-card::before {
-    --fs-1: 10rem;
-  }
+.feature-card::before {
+  --fs-1: 10rem;
+}
 
 
 
-  /**
+/**
    * PROJECT
    */
 
-  .project-list {
-    gap: 80px;
-  }
+.project-list {
+  gap: 80px;
+}
 
-  .project-item {
-    min-width: calc(50% - 40px);
-  }
+.project-item {
+  min-width: calc(50% - 40px);
+}
 
 
 
-  /**
+/**
    * NEWSLETTER
    */
 
-  .newsletter {
-    margin-block-start: 110px;
-  }
+.newsletter {
+  margin-block-start: 110px;
+}
 
-  .newsletter .container {
-    position: relative;
-  }
+.newsletter .container {
+  position: relative;
+}
 
-  .newsletter .newsletter-banner {
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    margin-block-end: 0;
-  }
+.newsletter .newsletter-banner {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  margin-block-end: 0;
+}
 
-  .newsletter-content {
-    max-width: 355px;
-    margin-inline-start: auto;
-  }
+.newsletter-content {
+  max-width: 355px;
+  margin-inline-start: auto;
+}
 
-  .newsletter .section-title {
-    --fs-4: 4rem;
-  }
+.newsletter .section-title {
+  --fs-4: 4rem;
+}
 
-  .newsletter-btn {
-    font-size: var(--fs-5);
-    padding: 10px 30px;
-  }
+.newsletter-btn {
+  font-size: var(--fs-5);
+  padding: 10px 30px;
+}
 
 
 
-  /**
+/**
    * FOOTER
    */
 
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
-  }
-
+.footer-top {
+  grid-template-columns: 1fr 1fr;
 }
+
+
 
 
 
@@ -1556,4 +1548,35 @@ body {
     padding-block: 60px;
   }
 
+}
+
+/* Ajustare doar pentru ecrane mai mici (ex: telefoane) */
+@media (max-width: 768px) {
+  .hero .shape-2 {
+    width: 200px;
+    /* Face sigla mai mică pe mobil */
+    height: auto;
+    top: 80px;
+    /* O mută mai sus */
+    left: 26%;
+    /* O aduce în centru */
+    transform: translate(-40%, 0);
+    /* Centrează perfect pe axa X */
+    bottom: auto;
+    /* Elimină poziționarea de jos */
+    right: auto;
+    /* Elimină alinierea la dreapta */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .hero .shape-2 {
+    width: 200px;
+    /* Dimensiune normală ca pe desktop */
+    height: auto;
+    position: absolute;
+    bottom: 280px;
+    /* Păstrează poziția de desktop */
+    right: 0px;
+  }
 }
