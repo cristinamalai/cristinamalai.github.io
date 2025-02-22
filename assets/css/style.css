@@ -906,7 +906,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-  gap: 100px;
+  gap: 80px;
 
 }
 
@@ -962,9 +962,9 @@ body {
 }
 
 .footer-brand img {
-  width: 200px;
+  width: 170px;
   /* Lățime fixă */
-  height: 200px;
+  height: 170px;
   /* Înălțime fixă */
   object-fit: contain;
   /* Asigură că imaginea nu este distorsionată */
@@ -1578,7 +1578,7 @@ body {
 
 @media (min-width: 1024px) {
   .hero-shape.shape-2 {
-    width: 400px;
+    width: 300px;
     height: auto;
     top: 80px;
     /* Poziționează sub bara de sus */
@@ -1601,5 +1601,80 @@ body {
     /* Centrează exact */
     bottom: auto;
     right: auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  /* Modificările pentru mobil */
+  .project-item {
+    flex-direction: column;
+  }
+
+  .project-card {
+    position: relative;
+  }
+
+  .project-card .card-content {
+    position: relative;
+    margin-block-start: 10px;
+    /* Ajustează spațierea dacă e necesar */
+  }
+
+  .project-card .h3 {
+    font-size: 16px;
+    /* Ajustează dimensiunea textului */
+  }
+
+  /* Dacă e necesar, modifică și alte stiluri pentru mobil */
+}
+
+@media (max-width: 768px) {
+  .newsletter .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .newsletter .img-holder {
+    width: 150px;
+    height: auto;
+    order: 1;
+  }
+
+  .newsletter .newsletter-content {
+    width: calc(100% - 170px);
+    order: 2;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .newsletter .section-title {
+    font-size: calc(var(--fs-2) - 20%);
+    margin-bottom: 10px;
+  }
+
+  .newsletter .newsletter-content h2 {
+    font-size: 25px;
+    /* Setează fontul la 32px, dublu față de valoarea anterioară */
+  }
+
+  .email-field,
+  .newsletter-btn {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .email-field {
+    padding: 10px;
+  }
+
+  .newsletter-btn {
+    padding: 10px;
+    font-size: var(--fs-9);
   }
 }
