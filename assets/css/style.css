@@ -702,83 +702,62 @@ body {
   #PROJECT
 \*-----------------------------------*/
 
-.project {
-  background-color: var(--alice-blue);
+.project-list {
+  display: flex;
+  gap: 10px;
+  /* Ajustăm spațiul dintre imagini */
+  padding-block-end: 40px;
+  scroll-snap-type: inline mandatory;
+  justify-content: flex-start;
+  overflow-x: auto;
 }
 
-.project :is(.section-subtitle, .section-title, .section-text) {
-  text-align: center;
-}
-
-.project .section-text {
-  margin-block: 20px 50px;
+.project-item {
+  flex: 0 0 auto;
+  /* Asigurăm că fiecare element are dimensiuni fixe */
+  width: 48%;
+  /* Reducem lățimea pentru a permite două imagini vizibile pe ecran */
+  scroll-snap-align: start;
 }
 
 .project-card {
   position: relative;
+  width: 100%;
+  transition: transform 0.3s ease;
 }
 
-.project-card .action-btn {
-  background-color: var(--dark-orange);
-  color: var(--white);
-  font-size: 28px;
-  padding: 16px;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  opacity: 0;
-  transition: var(--transition);
+.project-card:hover {
+  transform: scale(1.05);
+  /* Efect de mărire la hover */
 }
 
-.project-card:is(:hover, :focus-within) .action-btn {
-  opacity: 1;
-}
-
-.project-card .card-tag {
-  color: var(--dark-orange);
-  font-size: var(--fs-9);
+.project-card .card-banner {
+  width: 100%;
+  height: 100%;
 }
 
 .project-card .card-content {
   position: relative;
   background-color: var(--white);
   padding: 20px 30px;
-  margin-block-start: -50px;
-  margin-inline-start: 30px;
+  margin-block-start: -30px;
+  margin-inline-start: 0;
+}
+
+.project-card .card-title {
+  padding: 10px;
+  background-color: var(--alice-blue);
+  /* Fundal albastru deschis pentru text */
+  color: var(--prussian-blue);
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: var(--fs-7);
 }
 
 .project-card .h3 {
   font-size: var(--fs-7);
-}
-
-.project-card .card-title {
-  transition: var(--transition);
-}
-
-.project-card :is(.card-title, .card-link):is(:hover, :focus) {
-  color: var(--dark-orange);
-}
-
-.project-card .card-link {
-  color: var(--prussian-blue);
-  font-size: var(--fs-10);
-  font-weight: var(--fw-600);
-  text-transform: uppercase;
-  margin-block-start: 5px;
-  transition: var(--transition);
-}
-
-.project-list {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding-block-end: 40px;
-  scroll-snap-type: inline mandatory;
-}
-
-.project-item {
-  min-width: 100%;
-  scroll-snap-align: start;
 }
 
 .project-list::-webkit-scrollbar {
@@ -798,6 +777,20 @@ body {
   width: calc(25% - 40px);
 }
 
+.project .section-title,
+.project .section-subtitle {
+  text-align: center;
+  /* Alinierea textului la centru */
+  width: 100%;
+  /* Asigură că are lățimea completă pentru a fi centrat */
+  margin: 0 auto;
+  /* Centrare orizontală */
+}
+
+.project .section-text {
+  text-align: center;
+  /* Asigură că textul din descrierea secțiunii este centrat */
+}
 
 
 
@@ -854,16 +847,39 @@ body {
 
 .newsletter {
   background-color: var(--dark-orange);
+  padding: 40px 0;
+}
+
+.newsletter .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsletter-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .newsletter .img-holder {
   background-color: transparent;
   margin-block-end: 20px;
-  max-width: max-content;
 }
 
 .newsletter .section-title {
+  text-align: center;
   margin-block-end: 20px;
+  color: var(--white);
+  /* Asigură că titlul este vizibil pe fundalul portocaliu */
+}
+
+.newsletter .newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 .email-field {
@@ -886,10 +902,15 @@ body {
   color: var(--white);
   font-family: var(--ff-oswald);
   font-weight: var(--fw-700);
-  padding: 8px 20px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-
+.newsletter-btn:hover {
+  background-color: var(--dark-orange);
+}
 
 
 
@@ -1677,4 +1698,57 @@ body {
     padding: 10px;
     font-size: var(--fs-9);
   }
+}
+
+/* Ascunde butonul pe ecrane mai mari */
+.call-button {
+  display: none !important;
+  /* Asigură-te că e ascuns pe desktop */
+}
+
+/* Afișează doar pe mobil */
+@media (max-width: 768px) {
+  .call-button {
+    display: block !important;
+    background-color: #ff6600;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+
+  .call-button:hover {
+    background-color: #cc5500;
+  }
+}
+
+.about-banner {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  /* Acoperă sfertul de jos */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Transparent, ușor întunecat */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
 }
