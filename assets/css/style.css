@@ -494,15 +494,6 @@ body {
   animation: move 2s ease-in-out infinite alternate;
 }
 
-
-/*.hero-shape.shape-2 {
-  position: absolute;
-  width: 200px;
-  height: auto;
-  bottom: 390px;
-  right: 0px;
-}*/
-
 .hero-shape.shape-2 {
   position: absolute;
   animation: move 2s ease-in-out infinite alternate;
@@ -519,8 +510,6 @@ body {
     transform: translateY(20px);
   }
 }
-
-
 
 
 
@@ -1023,8 +1012,6 @@ body {
   visibility: visible;
   transform: translateY(-10px);
 }
-
-
 
 
 
@@ -1598,29 +1585,39 @@ body {
 
 }
 
+@media (min-width: 600px) and (max-width: 1024px) {
+
+  /* Stiluri pentru tablete */
+  .hero-shape.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 80px;
+    left: 33%;
+    transform: translateX(-50%);
+    bottom: auto;
+    right: auto;
+  }
+}
+
+
 @media (min-width: 1024px) {
   .hero-shape.shape-2 {
     width: 300px;
     height: auto;
     top: 80px;
-    /* Poziționează sub bara de sus */
     right: calc(33% - 500px);
-    /* Mută sigla mai în dreapta cu 150px */
     transform: translateX(50%);
-    /* Ajustare fină */
   }
 }
 
-/* Mobil: Logo perfect centrat sub bara de sus */
+
 @media (max-width: 768px) {
   .hero-shape.shape-2 {
     width: 150px;
     height: 150px;
     top: 80px;
-    /* Poziționează sub titlu */
     left: 33%;
     transform: translateX(-50%);
-    /* Centrează exact */
     bottom: auto;
     right: auto;
   }
@@ -1641,15 +1638,11 @@ body {
   .project-card .card-content {
     position: relative;
     margin-block-start: 10px;
-    /* Ajustează spațierea dacă e necesar */
   }
 
   .project-card .h3 {
     font-size: 16px;
-    /* Ajustează dimensiunea textului */
   }
-
-  /* Dacă e necesar, modifică și alte stiluri pentru mobil */
 }
 
 @media (max-width: 768px) {
@@ -1755,7 +1748,7 @@ body {
 }
 
 .email-addr {
-  padding:16px;
+  padding: 16px;
   background-color: white;
-  z-index:2;
+  z-index: 2;
 }
