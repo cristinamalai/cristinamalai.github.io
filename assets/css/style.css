@@ -883,7 +883,7 @@ body {
 }
 
 .email-field {
-  width: 260px;
+  width: 265px;
   background-color: var(--white);
   color: var(--eerie-black);
   font-size: var(--fs-9);
