@@ -1753,3 +1753,9 @@ body {
   text-align: center;
   margin: 0;
 }
+
+.email-addr {
+  padding:16px;
+  background-color: white;
+  z-index:2;
+}
